@@ -42,6 +42,7 @@ Springboot<br>
 H2<br>
 Swagger<br>
 Unit Test { Coverage 92% } <br>
+<img src="covered.PNG" alt="Covered">
 JWT Token<br>
 Actuator<br>
 <br><br><br>
