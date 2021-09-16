@@ -100,10 +100,10 @@ payload:<br>
 
 For ADMIN Role: <br>
 
-{
-  "password": "123",
-  "userName": "Cagla"
-}<br>
+ { <br>
+   "password": "123", <br>
+   "userName": "Cagla" <br>
+ }<br>
 
 Response example: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJDYWdsYSIsImlhdCI6MTYzMTgwNjA4NywiZXhwIjoxNjMxODA2Mzg3fQ.M_5osl0uxvwpONdszH4oWTfWMlEr-MwG6kEzv3W5Rb8 <br><br>
 Please authorize with Bearer keyword: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJDYWdsYSIsImlhdCI6MTYzMTgwNjA4NywiZXhwIjoxNjMxODA2Mzg3fQ.M_5osl0uxvwpONdszH4oWTfWMlEr-MwG6kEzv3W5Rb8
@@ -239,7 +239,9 @@ Db link : http://localhost:8080/h2-console/
 ● <b> Most used toppings for drinks report  </b>
 
 /api/report/report/max-topping
-          
+    
         
-        
-        
+<h3> Actuator Trace</h3>
+
+localhost:8080/actuator/httptrace
+
