@@ -55,8 +55,8 @@ Actuator<br>
 | PUT    | /api/update-product/order/{orderId}/product/{orderProductId} | Update product
 | DELETE | /api/delete-topping/order/{orderId}/product/{orderProductId}/topping/{productToppingId} | Delete topping from product| |
 | DELETE | /api/delete-order/{id} | Delete order |
-| GET    | /api//report/customer-total-amount | This method is used to find total amounts of per customer |
-| GET    | /api//report/report/max-topping | This method is used to find the popular topping of each product |
+| GET    | /api/report/customer-total-amount | This method is used to find total amounts of per customer |
+| GET    | /api/report/report/max-topping | This method is used to find the popular topping of each product |
 | POST   | /api/login | Get auth key| |
 
 
