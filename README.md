@@ -1,5 +1,4 @@
 # starbux-coffee
-# starbux-coffee-assignment
 
 <h3 align="center">Starbux</h3> <br>
 The RESTful API allows users to order drinks/toppings and admins can create/update/delete drinks/toppings and have access to the reports.
