@@ -1,5 +1,6 @@
 package com.example.starbuxcoffeeassignment.implementation;
 
+import com.example.starbuxcoffeeassignment.exception.ApiRequestException;
 import com.example.starbuxcoffeeassignment.model.ToppingUsage;
 import com.example.starbuxcoffeeassignment.model.UserAmount;
 import com.example.starbuxcoffeeassignment.repository.OrderProductDetailRepository;
@@ -24,20 +25,29 @@ public class ReportServiceImpl implements ReportService {
     @Autowired
     private OrderProductDetailRepository orderProductDetailRepository;
 
-    public List<UserAmount> getUserSpendingReportService(){
-        return  orderRepository.findSumAmountOfUsers();
+    public List<UserAmount> getUserSpendingReportService()  throws Exception{
+        try{
+            return  orderRepository.findSumAmountOfUsers();
+        }catch (Exception e){
+            throw new ApiRequestException("There is no transaction yet!" );
+        }
     };
 
-    public List<ToppingUsage> getUsageOfToppingsReportService(){
-        List<ToppingUsage> lstToppingUsage = orderProductDetailRepository.findMostUsedToppingOfDrinks();
+    public List<ToppingUsage> getUsageOfToppingsReportService()throws Exception{
+        try{
+            List<ToppingUsage> lstToppingUsage = orderProductDetailRepository.findMostUsedToppingOfDrinks();
 
-        Map<String, ToppingUsage> result = lstToppingUsage.stream()
-                .collect(Collectors.toMap(ToppingUsage::getProductName, Function.identity(),
-                        BinaryOperator.maxBy(Comparator.comparing(ToppingUsage::getCount))));
+            Map<String, ToppingUsage> result = lstToppingUsage.stream()
+                    .collect(Collectors.toMap(ToppingUsage::getProductName, Function.identity(),
+                            BinaryOperator.maxBy(Comparator.comparing(ToppingUsage::getCount))));
 
-        List<ToppingUsage> lstToppingUsage2 = new ArrayList<ToppingUsage>(result.values());
+            List<ToppingUsage> lstToppingUsage2 = new ArrayList<ToppingUsage>(result.values());
 
-        return lstToppingUsage2;
+            return lstToppingUsage2;
+        }catch (Exception e){
+            throw new ApiRequestException("There is no transaction yet!" );
+        }
+
     };
 
 

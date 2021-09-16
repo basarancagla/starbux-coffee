@@ -1,28 +1,20 @@
 package com.example.starbuxcoffeeassignment.implementation;
 
-
 import com.example.starbuxcoffeeassignment.entity.*;
 import com.example.starbuxcoffeeassignment.exception.ApiRequestException;
 import com.example.starbuxcoffeeassignment.repository.*;
 import com.example.starbuxcoffeeassignment.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.security.authentication.AuthenticationManager;
-//import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
 @Service
 public class OrderServiceImpl implements OrderService {
-  //  @Autowired
-   // AuthenticationManager authenticationManager;
-
     @Autowired
     private OrderRepository orderRepository;
 

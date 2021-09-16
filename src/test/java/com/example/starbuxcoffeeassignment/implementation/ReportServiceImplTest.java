@@ -40,7 +40,7 @@ class ReportServiceImplTest {
     }
 
     @Test
-    void getUserSpendingReportService() {
+    void getUserSpendingReportService() throws Exception {
 
         List<UserAmount> lstUserAmountInit = Arrays.asList(new UserAmount("Cagla",3.0));
         when(orderRepository.findSumAmountOfUsers()).thenReturn(lstUserAmountInit);
@@ -51,7 +51,7 @@ class ReportServiceImplTest {
     }
 
     @Test
-    void getUsageOfToppingsReportService() {
+    void getUsageOfToppingsReportService() throws Exception {
 
 
         List<ToppingUsage> lstToppingUsageInit = Arrays.asList(new ToppingUsage("Tea","Milk", 1L),new ToppingUsage("Tea","Lemon", 2L));

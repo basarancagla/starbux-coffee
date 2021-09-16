@@ -21,28 +21,20 @@ import java.util.List;
 public class ReportController {
 
     @Autowired
-    private ReportService reportService;
+    ReportService reportService;
 
     @ApiOperation(value = "This method is used to find total amounts of per customer")
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/report/customer-total-amount")
-    private List<UserAmount> customerTotalAmountReport() throws Exception{
-        try{
-            return reportService.getUserSpendingReportService();
-        }catch (Exception e){
-            throw new ApiRequestException("There is no transaction yet!" );
-        }
+    public List<UserAmount> customerTotalAmountReport() throws Exception{
+        return reportService.getUserSpendingReportService();
     }
 
     @ApiOperation(value = "This method is used to find the popular topping of each product")
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/report/max-topping")
-    private List<ToppingUsage> maxToppingReport(){
-        try{
-            return reportService.getUsageOfToppingsReportService();
-        }catch (Exception e){
-            throw new ApiRequestException("There is no transaction yet!" );
-        }
+    public List<ToppingUsage> maxToppingReport()throws Exception{
+        return reportService.getUsageOfToppingsReportService();
     }
 
 
